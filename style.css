@@ -109,6 +109,8 @@ body {
   color: white;
   width: 80%;
   margin: auto;
+  z-index: 3;
+  position: relative;
 }
 
 .line1, .line2 {
@@ -297,5 +299,9 @@ overflow: hidden;
    transform: translate(-50%, -50%);
    font-size: 0.5rem;
    transform: translate(-50%, -50%)
+ }
+
+ body.hide{
+   overflow: hidden;
  }
 
