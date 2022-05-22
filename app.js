@@ -51,7 +51,7 @@ gsap.utils.toArray(".slide").forEach((slide, i) => {
     pinSpacing: false,
     autoAlpha: 1,
     ease: "expo.out",
-    scrub: false,
+    scrub: true,
   });
 });
 
@@ -59,7 +59,7 @@ gsap.utils.toArray(".slide").forEach((slide, i) => {
 ScrollTrigger.create({
   snap: {
     snapTo: 1 / 2,
-    duration: 2
+    duration: 1
   }
 });
 
