@@ -117,6 +117,55 @@ function navToggle(e) {
 }
 
 
+
+// BARBA PAGE TRANSITIONS
+
+const logo = document.querySelector('#logo');
+
+barba.init({
+   views: [
+     {
+       namespace: 'home',
+       beforeEnter(){
+         animateSlides();
+         logo.href = 'index.html';
+       },
+       beforeLeave(){
+        slideScene.destroy();
+        pageScene.destroy();
+        controller.destroy();
+        slide.destroy();
+       },
+     },
+     {
+       namespace: 'fashion',
+       beforeEnter(){
+        logo.href = '../index.html';
+       }
+     },
+   ],
+   transitions: [
+     {
+    leave({current, next}){
+      let done = this.async();
+      window.scrollTo(0, 0);
+      // Animation
+      const tl = gsap.timeline({defaults: {ease: 'power2.inOut'}});
+      tl.fromTo(current.container, 1, {opacity: 1}, {opacity:0});
+      tl.fromTo('.swipe', 0.75, {x: '-100%'}, {x:'0%', onComplete: done}, '-=0.5');
+    },
+    enter({current, next}){
+      let done = this.async();
+        // Animation
+        const tl = gsap.timeline({defaults: {ease: 'power2.inOut'}});
+        tl.fromTo('.swipe', 0.75, {x: '-100%'}, {x:'0%', onComplete: done}, '-=0.5');
+        tl.fromTo(next.container, 1, {opacity: 0},);
+    },
+  }
+      ]
+});
+
+
 // EVENT LISTENERS 
 
 burger.addEventListener("click", navToggle);
