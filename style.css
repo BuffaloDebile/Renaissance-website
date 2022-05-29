@@ -82,7 +82,7 @@ main {
 }
 
 .hike-span {
-  color: rgb(167, 110, 231);
+  color: rgb(231, 110, 217);
 }
 .hero-desc h2 {
   font-family: "Abril Fatface";
@@ -195,7 +195,7 @@ main {
   background: rgb(86, 124, 228);
 }
 .t-swipe2 {
-  background: rgb(167, 110, 231);
+  background: rgb(231, 110, 217);
 }
 .t-swipe3 {
   background: rgb(255, 139, 93);
@@ -247,7 +247,7 @@ body.hide {
   color: rgb(255, 139, 93);
 }
 .fashion2 h1 {
-  color: rgb(167, 110, 231);
+  color: rgb(231, 110, 217);
 }
 .fashion3 h1 {
   color: rgb(86, 124, 228);
@@ -276,7 +276,7 @@ body.hide {
   transform: translateX(-100%);
 }
 .swipe1 {
-  background: rgb(167, 110, 231);
+  background: rgb(231, 110, 217);
   z-index: 5;
 }
 .swipe2 {
