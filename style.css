@@ -1,100 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* CSS Reset start */
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-/* Remove default padding */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Blinking outline indicator */
-
-.blink {
-  border: 4px #ff0000 solid;
-  
-  animation: blink 3s infinite;
-}
-
-@keyframes blink { 50% { border-color:#fff ; }  }
-
-/* CSS Reset end */
 
 body {
   background: #17181a;
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
   position: relative;
 }
-
 main {
   position: absolute;
 }
@@ -102,9 +17,7 @@ main {
 #logo {
   color: white;
   font-family: "Abril Fatface";
-  font-size: 2rem;
 }
-
 .nav-header {
   min-height: 10vh;
   font-size: 1rem;
@@ -114,16 +27,17 @@ main {
   color: white;
   width: 80%;
   margin: auto;
-  z-index: 3;
+  padding: 2rem 0rem;
+  z-index: 2;
   position: relative;
 }
-
-.line1, .line2 {
+.line1,
+.line2 {
   width: 3rem;
   height: 0.2rem;
   margin: 0.4rem;
   background: white;
-  pointer-events: none ;
+  pointer-events: none;
 }
 
 .slide {
@@ -131,25 +45,23 @@ main {
   margin: 0 auto 0 auto;
   width: 80%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: #17181a;
   color: white;
-
+  background: #17181a;
 }
 
 .hero-desc {
   display: flex;
-  justify-content: center;
-  align-items: start;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   flex-basis: 25rem;
   padding-left: 5rem;
   position: relative;
 }
-
-.hero-img{
+.hero-img {
   position: relative;
   flex: 1;
   flex-basis: 25rem;
@@ -163,9 +75,8 @@ main {
 }
 
 .fashion-span {
-  color: rgb(238, 101, 242);
+  color: rgb(255, 139, 93);
 }
-
 .mountain-span {
   color: rgb(86, 124, 228);
 }
@@ -173,34 +84,32 @@ main {
 .hike-span {
   color: rgb(167, 110, 231);
 }
-
 .hero-desc h2 {
-font-family: "Abril Fatface";
-font-size: 5rem;
+  font-family: "Abril Fatface";
+  font-size: 5rem;
 }
-
 .hero-desc p {
   padding: 3rem 0rem;
-  font-size: 1.3rem;
-  color: rgb(240, 239, 224);
-  }
-
-  .explore {
-    padding: 1rem;
-    background: none;
-    border: none;
-    color: white;
-    border: 1px solid white;
-    text-decoration: none;
-    align-self: flex-start;
-    cursor: pointer;
-  }
-
+  font-size: 1.5rem;
+  color: rgb(223, 223, 223);
+}
+.explore {
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 1rem;
+  text-decoration: none;
+  align-self: flex-start;
+  cursor: pointer;
+}
 .nav-bar {
   position: fixed;
-  inset: 0;
-  height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
   background: white;
   display: flex;
   justify-content: space-around;
@@ -210,33 +119,28 @@ font-size: 5rem;
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
 }
-
 .burger {
   cursor: pointer;
 }
-
-.nav-links{
+.nav-links {
   font-size: 3rem;
   flex-basis: 30rem;
 }
-.nav-links h3{
+.nav-links h3 {
   padding: 3rem 0rem;
 }
-
 .contact {
   flex-basis: 30rem;
 }
-
 .contact h2 {
   font-size: 3rem;
   padding: 2rem 0rem;
 }
-
 .contact p {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-  
+
 .reveal-img,
 .reveal-text {
   position: absolute;
@@ -259,23 +163,26 @@ font-size: 5rem;
   transition-property: background, transform;
   transform-origin: 75% 75%;
 }
-
-.cursor.explore-active{
+.cursor.nav-active {
+  background: rgb(86, 124, 228);
+  transform: scale(3);
+}
+.cursor.explore-active {
   background: white;
   transform: scale(3);
 }
-
- .cursor.nav-active{
-   background: rgb(89, 124, 228);
-   transform: scale(3);
- }
-
- .title{
-position: relative;
-overflow: hidden;
- }
-
- .title-swipe {
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%);
+}
+.title {
+  position: relative;
+  overflow: hidden;
+}
+.title-swipe {
   width: 100%;
   height: 100%;
   top: 0;
@@ -283,93 +190,179 @@ overflow: hidden;
   position: absolute;
   mix-blend-mode: darken;
   transform: translateY(100%);
- }
-
- .t-swipe1{
+}
+.t-swipe1 {
   background: rgb(86, 124, 228);
- }
-
- .t-swipe2{
+}
+.t-swipe2 {
   background: rgb(167, 110, 231);
- }
+}
+.t-swipe3 {
+  background: rgb(255, 139, 93);
+}
 
- .t-swipe3{
-  background:rgb(238, 101, 242);
- }
+.scrollmagic-pin-spacer {
+  position: static !important;
+}
+body.hide {
+  overflow: hidden;
+}
 
- .cursor-text{
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-size: 0.5rem;
-   transform: translate(-50%, -50%)
- }
-
- body.hide{
-   overflow: hidden;
- }
-
- /* OTHER PAGE */
-
-.fashion1, .fashion2, .fashion3 {
+/* Other Pages */
+.fashion1,
+.fashion2,
+.fashion3 {
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
-  margin:auto ;
+  margin: auto;
   color: white;
   margin-top: 5rem;
   flex-wrap: wrap;
   position: relative;
 }
-
 .fashion-img {
   height: 70vh;
   flex-basis: 30rem;
 }
-
-
-.fashion-img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-
 .fashion-text {
- flex: 1;
- position: relative;
-flex-basis: 25rem; 
+  flex: 1;
+  position: relative;
+  flex-basis: 25rem;
+}
+.fashion-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fashion-text h1 {
   font-size: 6rem;
-  padding: 5rem 0;
+  padding: 5rem 0rem;
 }
 
 .fashion1 h1 {
-  color:rgb(255, 139, 93);
+  color: rgb(255, 139, 93);
 }
 .fashion2 h1 {
-  color:rgb(167, 110, 231);
+  color: rgb(167, 110, 231);
 }
-
 .fashion3 h1 {
-  color:rgb(86, 124, 228);
+  color: rgb(86, 124, 228);
 }
 
 .fashion-text p {
-  padding: 2rem 2rem 0 0;
   font-size: 2rem;
+  padding: 2rem 2rem 0rem 0rem;
   margin-bottom: 10rem;
 }
 .fashion-nr {
+  font-size: 15rem;
   position: absolute;
-  left: 40%;
+  left: 50%;
   bottom: 10%;
   color: white;
-  opacity: 0.4;
-  font-size: 15rem;
+  opacity: 0.2;
+}
+
+.swipe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+.swipe1 {
+  background: rgb(167, 110, 231);
+  z-index: 5;
+}
+.swipe2 {
+  background: rgb(86, 124, 228);
+  z-index: 4;
+}
+.swipe3 {
+  background: rgb(255, 139, 93);
+  z-index: 3;
+}
+
+@media screen and (max-width: 1500px) {
+  .hero-img {
+    height: 50vh;
+  }
+  .fashion-text h1 {
+    font-size: 2rem;
+    padding: 1rem 0rem;
+  }
+  .fashion-text p {
+    font-size: 1.2rem;
+  }
+  .fashion-img img {
+    height: 50vh;
+    object-position: top;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  .slide {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-desc {
+    padding: 0;
+  }
+  .hero-img {
+    padding-top: 4rem;
+  }
+  .hero-desc h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0rem;
+  }
+  .hero-desc p {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .explore {
+    width: 60%;
+    margin: auto;
+  }
+  .detail-slide {
+    width: 100%;
+    text-align: center;
+  }
+  .fashion-text p {
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+  .fastion-text h1 {
+    margin: 2rem 0rem;
+  }
+  .fashion-nr {
+    font-size: 8rem;
+  }
+  .nav-bar {
+    display: block;
+  }
+  .nav-links {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .contact p {
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+  }
 }
